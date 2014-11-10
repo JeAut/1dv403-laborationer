@@ -7,10 +7,18 @@ window.onload = function(){
 		// Plats för förändring.		
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
 
-
-
+    
+    var alg = ('a' && 'A');
+    var re = new RegExp(alg, 'g');
+    var newstring = str.replace(re, '#'); 
+    
+    
+    newstring = newstring.toLowerCase();
+    newstring = newstring.toUpperCase();
+    return newstring;
+    
+    
 
 
 
