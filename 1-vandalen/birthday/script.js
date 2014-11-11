@@ -5,12 +5,46 @@ window.onload = function(){
 	
 	var birthday = function(date){
 		
-
-
-			// Din kod här.
-
-
-
+	    	var day = 24*60*60*1000; // Sökte fram hur man delar upp en dag i millisekunder.
+        var userBirthdate = new Date(date);
+        var birthMonth = userBirthdate.getMonth();
+        var birthDay = userBirthdate.getDate();
+        var curDate = new Date();
+        var curMonth = curDate.getMonth();
+        var curDays = curDate.getDate();
+        var curYear = curDate.getFullYear();
+        var nextYear;
+        var nextDays;
+        var nextMonth;
+        
+        if (date === "")
+        {
+        	throw new Error("Fel! Var vänlig skriv datum på följande sätt: ÅÅÅÅ-MM-DD")
+        }
+        
+        if (date.length <= 10)
+        {
+        	// Om födelsedagen redan inträffat detta år.
+        	if (birthMonth == curMonth && birthDay < curDays)
+        	{
+        		nextYear = curYear+1;
+        	}
+        	else if (birthMonth < curMonth)
+        	{
+        		nextYear = curYear+1;
+        	}
+        	// Om nästa födelsedag är detta år.
+        	else
+        	{
+        		nextYear = curYear;
+        	}
+        	nextMonth = birthMonth;
+        	nextDays = birthDay+1;
+        	var test = new Date(nextYear, nextMonth, nextDays);
+        	var diffDays = Math.floor(Math.abs(test.getTime() - curDate.getTime()) /day);
+        	
+        	return diffDays;
+        }
 
 	};
 	// ------------------------------------------------------------------------------
