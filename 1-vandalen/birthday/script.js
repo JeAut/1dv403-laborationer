@@ -19,31 +19,32 @@ window.onload = function(){
         
         if (date === "")
         {
-        	throw new Error("Fel! Var vänlig skriv datum på följande sätt: ÅÅÅÅ-MM-DD")
+           throw new Error("Fel! Var vänlig skriv datum på följande sätt: ÅÅÅÅ-MM-DD")
         }
         
         if (date.length <= 10)
         {
-        	// Om födelsedagen redan inträffat detta år.
-        	if (birthMonth == curMonth && birthDay < curDays)
-        	{
-        		nextYear = curYear+1;
-        	}
-        	else if (birthMonth < curMonth)
-        	{
-        		nextYear = curYear+1;
-        	}
-        	// Om nästa födelsedag är detta år.
-        	else
-        	{
-        		nextYear = curYear;
-        	}
-        	nextMonth = birthMonth;
-        	nextDays = birthDay+1;
-        	var test = new Date(nextYear, nextMonth, nextDays);
-        	var diffDays = Math.floor(Math.abs(test.getTime() - curDate.getTime()) /day);
+           // Om födelsedagen redan inträffat detta år.
+       	   if (birthMonth == curMonth && birthDay < curDays)
+           {
+        	nextYear = curYear+1;
+           }
+           else if (birthMonth < curMonth)
+           {
+        	nextYear = curYear+1;
+           }
+           // Om nästa födelsedag är detta år.
+           else
+           {
+        	nextYear = curYear;
+           }
+           
+        nextMonth = birthMonth;
+        nextDays = birthDay+1;
+        var test = new Date(nextYear, nextMonth, nextDays);
+        var diffDays = Math.floor(Math.abs(test.getTime() - curDate.getTime()) /day);
         	
-        	return diffDays;
+        return diffDays;
         }
 
 	};
