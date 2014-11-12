@@ -5,18 +5,16 @@ window.onload = function(){
 	var min = 0;
 	var max = 100;
 	var secret = Math.floor( Math.random() * (max-min)+1 )+min; Math.floor( Math.random() * (100-1)+1) + 1; Math.floor( Math.random() * 100)+1;; // Detta tal behöver bytas ut mot ett slumpat tal.
-    var guesses = 0;
+       var guesses = 0;
 	
-	
-	
-	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var guess = function(number){
 		
-		console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
-		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
+	console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
+	console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 			
-			guesses++;
-		// Plats för förändring.
+		guesses++;
+
+       // if-satser för att returnera true, eller false ifall det gissade talet är högre eller lägre än det slumpade talet.
        if (number < secret)
        {
        	return [false, "Det hemliga talet är högre!"];
@@ -25,20 +23,18 @@ window.onload = function(){
        {
        	return [false, "Det hemliga talet är lägre!"];
        }
+       
+       // Om det gissade talet är mindre än 0, eller högre än 100.
        else if (number < min || number > max)
        {
        	return [false, "Talet är utanför intervallet 0 - 100"];
        }
+       
+       // Returnerar true om det gissade talet stämmer överrens med det slumpade talet.
        else 
        {
        	return [true, "Grattis du vann! Det hemliga talet var "+secret+" och du behövde "+guesses+" gissningar för att hitta det."]
        }
-
-		// Returnera exempelvis: 
-		// [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."]
-		// [false, "Det hemliga talet är högre!"]
-		// [false, "Det hemliga talet är lägre!"]
-		// [false, "Talet är utanför intervallet 0 - 100"]		
 	};
 	// ------------------------------------------------------------------------------
 
