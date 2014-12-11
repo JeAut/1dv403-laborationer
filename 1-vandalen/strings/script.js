@@ -1,7 +1,7 @@
 "use strict";
 
 window.onload = function(){
-
+	
 	var convertString = function(str){
     
     var alg = "";

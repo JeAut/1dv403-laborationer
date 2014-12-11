@@ -1,0 +1,111 @@
+
+
+
+#container {
+    display:block;
+    height:1000%;
+    padding:40px;
+    
+    margin-left:25%;
+    margin-right:25%;
+    text-align:center;
+    background-color: rgba(12, 0, 20, 0.5);
+}
+
+#body {
+    width:960px;
+    margin: 0 auto;
+}
+
+body {
+    background-image:url(wood.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Play', sans-serif;
+    margin-right:60px;
+    color: #888;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: #000 1px 1px, #000 2px 2px, #000 3px 3px;
+}
+
+
+#textbox {
+    resize:none;
+    box-sizing:border-box;
+    width: 60%;
+    overflow:auto;
+    height:70px;
+    padding:10px;
+    margin-bottom:5px;
+    border-width:1px;
+    border-color:rgb(200, 200, 200);
+    border-style:solid;
+    border-radius:10px 10px 0px 10px;
+    box-shadow:3px 3px 0px rgba(220, 220, 220, 0.7);
+    background-color:rgba(240, 240, 240, 0.5);
+}
+
+#button {
+    float:none;
+    padding:10px;
+    border-radius:8px 8px 0px 8px;
+    border:none;
+    color:#FFF;
+    background-color:#000;
+    box-shadow:3px 3px 0px rgba(220, 220, 220, 0.7);
+    font-size:0.7em;
+}
+
+.messagetime {
+    margin-right: 4px;
+    margin-left: 8px;
+    
+}
+
+.removemessage {
+    margin-left:200px;
+}
+
+#counter {
+    float:none;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+#counter, .datetext {
+    font-family:Arial, sans-serif;
+    font-size:0.7em;
+    margin-left:250px;
+    margin-bottom:5px;
+    color:#fff;
+}
+
+.message {
+    border-width:1px;
+    border-color:#fff;
+    border-style:solid;
+    border-radius:10px;
+    width:65%;
+    overflow:auto;
+    margin-left:121px;
+    box-shadow:3px 3px 0px rgba(220, 220, 220, 0.7);
+    background-color:rgba(240, 240, 240, 0.5);
+}
+
+.messagetext {
+    font-family:Arial, sans-serif;
+    color:#fff;
+    font-size:0.9em;
+}
+
+.datetext {
+    color:#000;
+    margin-left:1px;
+}

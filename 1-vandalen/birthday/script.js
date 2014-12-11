@@ -19,7 +19,7 @@ window.onload = function(){
         
         if (date === "")
         {
-           throw new Error("Fel! Var vänlig skriv datum på följande sätt: ÅÅÅÅ-MM-DD")
+           throw new Error("Fel! Skottår.")
         }
         
         if (date.length <= 10)
