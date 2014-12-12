@@ -1,6 +1,6 @@
 "use strict";
 
-var mezzageApp = {
+var labbymezzage = {
     
     messages: [],
     
@@ -11,13 +11,13 @@ var mezzageApp = {
         document.getElementById("counter").innerHTML = "Antal meddelanden: 0";
 
         button.onclick = function(){
-            mezzageApp.createMessage(textarea);
+            labbymezzage.createMessage(textarea);
         };
         
         textarea.onkeypress = function(e){
             if(e.keyCode == 13 && !e.shiftKey){
                     e.preventDefault();
-                    mezzageApp.createMessage(textarea);
+                    labbymezzage.createMessage(textarea);
             }
         };
 
@@ -33,9 +33,9 @@ var mezzageApp = {
         else if(message !== ""){
             
             var mess = new Message(message, new Date());
-            mezzageApp.messages.push(mess);
+            labbymezzage.messages.push(mess);
 
-            mezzageApp.renderMessages(mezzageApp.messages[mezzageApp.messages.length-1]);
+            labbymezzage.renderMessages(labbymezzage.messages[labbymezzage.messages.length-1]);
         }
     },
     
@@ -47,11 +47,11 @@ var mezzageApp = {
         
          
         
-        for (var i = 0; i < mezzageApp.messages.length; ++i){
-            mezzageApp.renderMessage(i);
+        for (var i = 0; i < labbymezzage.messages.length; ++i){
+            labbymezzage.renderMessage(i);
             textbox.value = "";
         }
-            mezzageApp.countMessages(i);
+            labbymezzage.countMessages(i);
         
     },
     
@@ -75,11 +75,11 @@ var mezzageApp = {
         
         var text = document.createElement("p");
         text.className = "messagetext";
-        text.innerHTML = mezzageApp.messages[messageID].getHTMLText();
+        text.innerHTML = labbymezzage.messages[messageID].getHTMLText();
         
         var date = document.createElement("footer");
         date.className = "datetext";
-        date.innerHTML = mezzageApp.messages[messageID].getDateText();
+        date.innerHTML = labbymezzage.messages[messageID].getDateText();
 
         var icons = document.createElement("div");
         icons.className = "icons";
@@ -114,30 +114,30 @@ var mezzageApp = {
         myMessages.appendChild(oneMessage);
         
         aRemoveMessage.onclick = function(){
-            mezzageApp.removeActualMessage(messageID);
+            labbymezzage.removeActualMessage(messageID);
         };
         
         aMessageTime.onclick = function(){
-            mezzageApp.messageTimeCreated(messageID);
+            labbymezzage.messageTimeCreated(messageID);
         };
     },
     
     messageTimeCreated: function(time){
             var months = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"];
-            var monthNumber = mezzageApp.messages[time].getDate().getMonth();
+            var monthNumber = labbymezzage.messages[time].getDate().getMonth();
             var month = months[monthNumber];
-            var d = mezzageApp.messages[time].getDate();
-            alert("Inlägget skapades den " + d.getDate() + " " + month + " " + d.getFullYear() + " klockan " + mezzageApp.messages[time].getDateText());
+            var d = labbymezzage.messages[time].getDate();
+            alert("Inlägget skapades den " + d.getDate() + " " + month + " " + d.getFullYear() + " klockan " + labbymezzage.messages[time].getDateText());
     },
     
     removeActualMessage: function(removedMessage){
             var control = confirm("Är du säker på att du vill ta bort meddelandet?");
             if(control === true){
-            mezzageApp.messages.splice(removedMessage, 1);
-            mezzageApp.renderMessages();
+            labbymezzage.messages.splice(removedMessage, 1);
+            labbymezzage.renderMessages();
         }
     },
 
 };
 
-window.onload = mezzageApp.init;
+window.onload = labbymezzage.init;

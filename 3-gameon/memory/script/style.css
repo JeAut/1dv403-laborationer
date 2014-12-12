@@ -1,0 +1,42 @@
+#container {
+     display:block;
+    height:100%;
+    padding:40px;
+    
+    margin-left:25%;
+    margin-right:25%;
+    text-align:center;
+}
+
+body {
+    background-color:#E5CCFF;
+}
+
+h1 {
+    font-family:Arial, sans-serif;
+    color:#606060;
+    text-shadow: #000 1px 1px, #000 2px 2px, #000 3px 3px;
+}
+
+#restart {
+    font-family:Arial, sans-serif;
+}
+
+#pairs {
+    font-family:Arial, sans-serif;
+}
+
+#counter {
+    font-family:Arial, sans-serif;
+}
+
+#start {
+    font-family:Arial, sans-serif;
+    text-decoration:none;
+    font-weight:bold;
+    color:#606060;
+}
+
+#theGame {
+    margin-left:317px;
+}
